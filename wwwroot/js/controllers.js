@@ -1,3 +1,5 @@
+use 'strict';
+
 var demoControllers = angular.module('demoControllers', []);
 
 demoControllers.controller('PhoneListCtrl', ['$scope', '$rootScope', '$http',

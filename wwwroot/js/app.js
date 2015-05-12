@@ -1,3 +1,5 @@
+use 'strict';
+
 var demoApp = angular.module('demoApp', [
 	'ngAnimate',
 	'ngTouch',
