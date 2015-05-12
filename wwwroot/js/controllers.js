@@ -36,11 +36,14 @@ demoControllers.controller('MapCtrl', ['$scope',
 demoControllers.controller('LocateCtrl', ['$scope', '$rootScope', 'geolocation',
 	function($scope, $rootScope, geolocation) {
 		$scope.locate = function() {
-			geolocation().then(function(position) {
+			geolocation()
+            .then(function(position) {
 				$rootScope.latitude = position.coords.latitude;
 				$rootScope.longitude = position.coords.longitude;
 				$rootScope.$broadcast("locationUpdated");
-			});
+			},function(err){
+                alert("something failed" + err);
+            });
 		};
 	}
 ]);

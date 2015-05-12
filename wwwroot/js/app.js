@@ -79,7 +79,7 @@ demoApp.factory('geolocation', ['$q', '$window',
 
             function onError(error) {
                 $window.navigator.notification.alert('There was a problem locating your position, please manually enter your city, state or zipcode.', null, 'Failed to Locate Position', 'Close');
-                deferred.resolve(null);
+                deferred.resolve(error);
             }
 
             navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
